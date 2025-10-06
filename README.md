@@ -1,1 +1,1 @@
-Assign project to clone shopHub app
+Assignment project to clone shopHub app
