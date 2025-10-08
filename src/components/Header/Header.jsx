@@ -1,8 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import style from "./Header.module.css";
 import { appConfig, navigationItems } from "../../data/appData";
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -21,11 +23,23 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <button className={style.mobileMenuBtn} aria-label="Toggle mobile menu">
-          <span className={style.hamburger}></span>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className={style.mobileMenuBtn}
+          aria-label="Toggle mobile menu"
+        >
+          <span
+            className={`${style.hamburger} ${
+              isMobileMenuOpen ? style.active : ""
+            }`}
+          ></span>
         </button>
       </div>
-      <div className={style.mobileMenu}>
+      <div
+        className={`${style.mobileMenu} ${
+          isMobileMenuOpen ? style.active : ""
+        }`}
+      >
         <ul className={style.mobileNavList}>
           {navigationItems.map((item, index) => (
             <li key={index} className={style.mobileNavItem}>

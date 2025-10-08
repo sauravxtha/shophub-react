@@ -67,6 +67,7 @@
   height: 2px;
   background: #4a5568;
   position: absolute;
+  transition: all 0.3s ease;
 }
 .hamburger::before {
   top: 10px;
@@ -75,12 +76,39 @@
   top: -10px;
 }
 
+.hamburger.active {
+  background: transparent;
+}
+
+.hamburger.active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger.active::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 .mobileMenu {
-  background: rgba(255, 255, 255, 0.98);
+  position: fixed;
+  left: 0;
+  right: 0;
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
   z-index: 499;
   padding: 2rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.mobileMenu.active {
+  background: rgba(255, 255, 255, 0.98);
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0%);
 }
 
 .mobileNavList {
