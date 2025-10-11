@@ -5,6 +5,7 @@ import { appConfig, navigationItems } from "../../data/appData";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -53,11 +54,24 @@ const Header = () => {
             >
               {item.dropdown ? (
                 <>
-                  <button className={style.mobileDropdownToggle}>
+                  <button
+                    className={style.mobileDropdownToggle}
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  >
                     {item.name}
-                    <span className={style.mobileDropdownArrow}>▼</span>
+                    <span
+                      className={`${style.mobileDropdownArrow} ${
+                        isDropdownOpen ? style.active : ""
+                      }`}
+                    >
+                      ▼
+                    </span>
                   </button>
-                  <ul className={style.mobileSubmenu}>
+                  <ul
+                    className={`${style.mobileSubmenu} ${
+                      isDropdownOpen ? style.active : ""
+                    }`}
+                  >
                     {item.dropdown.map((subItem) => (
                       <li
                         key={subItem.href}
