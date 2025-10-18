@@ -1,0 +1,30 @@
+.textContent {
+  opacity: 0;
+}
+
+.textContent.vissible {
+  opacity: 1;
+}
+
+.imageContainer {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.imageContainer.vissible {
+  opacity: 1;
+}
+
+.heroContent {
+  position: relative;
+}
+
+.sliderControls {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+}
+.sliderControls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
