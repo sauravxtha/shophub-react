@@ -1,30 +1,142 @@
-.textContent {
-  opacity: 0;
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
-.textContent.vissible {
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.textContent h1,
+.textContent p {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.textContent.vissible h1,
+.textContent.vissible p {
   opacity: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+}
+
+.subTitle {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: bur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
 }
 
 .imageContainer {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .imageContainer.vissible {
   opacity: 1;
 }
 
-.heroContent {
+.imageWrapper {
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.heroImage {
+  height: 300px;
+  width: 100%;
+}
+
+.glassOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  pointer-events: none;
 }
 
 .sliderControls {
   position: absolute;
   left: 50%;
-  right: 50%;
-}
-.sliderControls {
+  transform: translateX(-50%);
+  bottom: 2rem;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.sliderControl {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sliderControl.active {
+  background: white;
+  transform: scale(1.2);
 }

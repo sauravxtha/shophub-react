@@ -19,6 +19,14 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSliderControl = (index) => {
+    setIsVissible(false);
+    setTimeout(() => {
+      setCurrentSlide(index);
+      setIsVissible(true);
+    }, 500);
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
@@ -45,17 +53,18 @@ const Hero = () => {
               src={heroSlides[currentSlide].image}
               alt={heroSlides[currentSlide].title}
             />
+            <div className={styles.glassOverlay}></div>
           </div>
         </div>
         <div className={styles.sliderControls}>
           {heroSlides.map((slide, index) => (
             <span
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => handleSliderControl(index)}
               key={index}
-              className={styles.sliderControl}
-            >
-              ⚪
-            </span>
+              className={`${styles.sliderControl} ${
+                currentSlide === index ? styles.active : ""
+              }`}
+            ></span>
           ))}
         </div>
       </div>
