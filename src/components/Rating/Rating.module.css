@@ -1,0 +1,15 @@
+.stars {
+  display: flex;
+  gap: 4px;
+  font-size: 1.1rem;
+}
+
+.halfStar {
+  position: relative;
+}
+.halfStar::before {
+  content: "⭐️";
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
+}
