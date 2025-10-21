@@ -11,9 +11,9 @@ const Featured = () => {
           <h2>Featured Products</h2>
           <p>Discover our handpicked selection of trending items</p>
         </div>
-        {featuredProducts.map((featuredProduct) => (
-          <div className={styles.productsGrid} key={featuredProduct.id}>
-            <div className={styles.productCard}>
+        <div className={styles.productsGrid}>
+          {featuredProducts.map((featuredProduct) => (
+            <div className={styles.productCard} key={featuredProduct.id}>
               <div className={styles.productImage}>
                 <img src={featuredProduct.image} alt={featuredProduct.name} />
               </div>
@@ -30,10 +30,11 @@ const Featured = () => {
                 <div className={styles.productPrice}>
                   ${featuredProduct.price}
                 </div>
+                <button className={styles.addToCartBtn}>Add to Cart</button>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className={styles.viewAll}></div>
       </div>
     </section>

@@ -1,15 +1,13 @@
-.stars {
-  display: flex;
-  gap: 4px;
-  font-size: 1.1rem;
+.fullStar {
+  color: #ffc107;
 }
-
 .halfStar {
   position: relative;
 }
 .halfStar::before {
-  content: "⭐️";
+  content: "★";
   position: absolute;
   width: calc(var(--rating) * 100%);
   overflow: hidden;
+  color: #ffc107;
 }

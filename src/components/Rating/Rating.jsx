@@ -8,8 +8,8 @@ const Rating = ({ rating = 0 }) => {
   return (
     <div className={styles.stars}>
       {[...Array(fullStars)].map((_, index) => (
-        <span key={`full-${index}`} className={styles.fullstar}>
-          ⭐
+        <span key={`full-${index}`} className={styles.fullStar}>
+          ★
         </span>
       ))}
       {halfStars && (
@@ -17,12 +17,12 @@ const Rating = ({ rating = 0 }) => {
           className={`halfStar ${styles.halfStar}`}
           style={{ "--rating": decimalHafl }}
         >
-          ☆
+          ★
         </span>
       )}
       {[...Array(emptyStars)].map((_, index) => (
         <span key={`empty-${index}`} className={styles.emptyStars}>
-          ☆
+          ★
         </span>
       ))}
     </div>
