@@ -96,3 +96,16 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.viewAll {
+  text-align: center;
+}
+.viewAllBtn {
+  padding: 1rem 2rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}

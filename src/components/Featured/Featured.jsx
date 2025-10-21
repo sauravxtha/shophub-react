@@ -35,7 +35,9 @@ const Featured = () => {
             </div>
           ))}
         </div>
-        <div className={styles.viewAll}></div>
+        <div className={styles.viewAll}>
+          <button className={styles.viewAllBtn}>View All Products</button>
+        </div>
       </div>
     </section>
   );
