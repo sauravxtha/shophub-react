@@ -20,6 +20,7 @@ const Products = () => {
               className={`${styles.categoryBtn} ${
                 activeCategory == productCategory.id ? styles.active : ""
               }`}
+              onClick={() => setActiveCategory(productCategory.id)}
             >
               <span className={styles.categoryIcon}>
                 {productCategory.icon}
@@ -29,9 +30,14 @@ const Products = () => {
           ))}
         </div>
         <div className={styles.productsGrid}>
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {products
+            .filter(
+              (product) =>
+                activeCategory == "all" || activeCategory == product.category
+            )
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
         </div>
       </div>
     </section>

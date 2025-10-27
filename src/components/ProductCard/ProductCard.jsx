@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
           <Rating rating={product.rating} />
           <span className={styles.rating}>({product.rating})</span>
         </div>
-        <div className={styles.productPrice}>{product.price}</div>
+        <div className={styles.productPrice}>${product.price}</div>
       </div>
     </div>
   );
