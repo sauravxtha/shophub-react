@@ -3,6 +3,7 @@ import Hero from "./components/Hero/Hero";
 import Featured from "./components/Featured/Featured";
 import Products from "./components/Products/Products";
 import Newsletter from "./components/Newsletter/Newsletter";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Products />
         <Newsletter />
       </main>
+      <Footer />
     </div>
   );
 }

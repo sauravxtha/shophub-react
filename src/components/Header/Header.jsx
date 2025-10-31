@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import style from "./Header.module.css";
 import { appConfig, navigationItems } from "../../data/appData";
