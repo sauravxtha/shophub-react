@@ -4,7 +4,7 @@ import { appConfig, navigationItems } from "../../data/appData";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(null);
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -17,13 +17,59 @@ const Header = () => {
           <ul className={style.navList}>
             {navigationItems.map((item) => (
               <li key={item.href} className={style.navItem}>
-                <a className={style.navLink} href={item.href}>
-                  {item.name}
-                </a>
+                {item.dropdown ? (
+                  <div
+                    onMouseEnter={() => setIsDropdownOpen(item.name)}
+                    onMouseLeave={() => setIsDropdownOpen(null)}
+                    onClick={() =>
+                      setIsDropdownOpen(
+                        isDropdownOpen == item.name ? null : item.name
+                      )
+                    }
+                    className={style.dropdownContainer}
+                  >
+                    <button className={style.dropdown}>
+                      {item.name}
+                      <span className={style.dropdownArrow}>▼</span>
+                    </button>
+                    <ul
+                      className={`${style.submenuItems} ${
+                        isDropdownOpen == item.name ? style.active : ""
+                      }`}
+                    >
+                      {item.dropdown.map((item) => (
+                        <li key={item.name} className={style.submenuItem}>
+                          <a className={style.submenuLink} href={item.href}>
+                            <span className={style.submenuIcon}>
+                              {item.icon}
+                            </span>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <a className={style.navLink} href={item.href}>
+                    {item.name}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
         </nav>
+        {/* action buttons */}
+        <div className={style.action}>
+          <button className={style.search}>
+            <span className={style.searchIcon}>🔍</span>
+          </button>
+          <button className={style.cart}>
+            <span className={style.cartIcon}>🛒</span>
+          </button>
+          <button className={style.user}>
+            <span className={style.userIcon}>👤</span>
+          </button>
+        </div>
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
