@@ -172,3 +172,24 @@
 .legalLink:hover {
   color: #e2e8f0;
 }
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  .mainContent {
+    grid-template-columns: 2fr 1fr 1.5fr;
+    text-align: left;
+  }
+
+  .socialLinks {
+    justify-content: left;
+  }
+
+  .contactItem {
+    justify-content: left;
+  }
+  .copyrightContent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
