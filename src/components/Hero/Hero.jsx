@@ -56,17 +56,17 @@ const Hero = () => {
             <div className={styles.glassOverlay}></div>
           </div>
         </div>
-        <div className={styles.sliderControls}>
-          {heroSlides.map((slide, index) => (
-            <span
-              onClick={() => handleSliderControl(index)}
-              key={index}
-              className={`${styles.sliderControl} ${
-                currentSlide === index ? styles.active : ""
-              }`}
-            ></span>
-          ))}
-        </div>
+      </div>
+      <div className={styles.sliderControls}>
+        {heroSlides.map((slide, index) => (
+          <span
+            onClick={() => handleSliderControl(index)}
+            key={index}
+            className={`${styles.sliderControl} ${
+              currentSlide === index ? styles.active : ""
+            }`}
+          ></span>
+        ))}
       </div>
     </section>
   );

@@ -11,7 +11,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -20,10 +19,10 @@
 }
 
 .textContent {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: white;
 }
 
@@ -103,6 +102,7 @@
 .heroImage {
   height: 300px;
   width: 100%;
+  object-fit: cover;
 }
 
 .glassOverlay {
@@ -139,4 +139,25 @@
 .sliderControl.active {
   background: white;
   transform: scale(1.2);
+}
+
+@media (min-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .textContent {
+    text-align: left;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .heroImage {
+    height: 400px;
+  }
+
+  .ctaButtons {
+    justify-content: left;
+  }
 }
