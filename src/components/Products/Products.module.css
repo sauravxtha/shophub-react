@@ -61,3 +61,22 @@
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .productsHeading h2 {
+    font-size: 2.5rem;
+  }
+
+  .categoryBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .productsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
