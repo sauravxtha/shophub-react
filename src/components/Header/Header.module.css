@@ -173,6 +173,9 @@
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
   .logo {
     font-size: 1.5rem;
   }
@@ -189,8 +192,10 @@
     display: flex;
     gap: 2rem;
   }
-  .navItem {
-    color: #2d3748;
+  .navItem a {
+    color: #4a5568;
+    font-weight: 500;
+    padding: 0.5rem 0;
   }
   .dropdownContainer {
     position: relative;

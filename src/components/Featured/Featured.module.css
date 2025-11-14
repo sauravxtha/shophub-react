@@ -109,3 +109,16 @@
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  .sectionHeader h2 {
+    font-size: 2.5rem;
+  }
+  .productsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
